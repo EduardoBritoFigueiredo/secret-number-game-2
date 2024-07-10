@@ -36,9 +36,15 @@ function checkGuess() {
       showTextOnScreen('p', 'The secret number is greater than your guess.')
     }
     tries++
+    clearInputText()
   }
 }
 
 function generateRandomNumber() {
   return parseInt(Math.random() * 10 + 1)
+}
+
+function clearInputText() {
+  guessInput = document.querySelector('input')
+  guessInput.value = ''
 }
