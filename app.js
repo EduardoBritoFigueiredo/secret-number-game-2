@@ -1,5 +1,6 @@
 let secretNumber = generateRandomNumber()
 console.log(`Secret number: ${secretNumber}`)
+let tries = 1
 
 // function  to update tag text on HTML
 function showTextOnScreen(tag, text) {
@@ -17,7 +18,10 @@ function checkGuess() {
   // case guess is correct, show response
   if(guess == secretNumber) {
     showTextOnScreen('h1', 'Guess correct!')
-    showTextOnScreen('p', 'You guessed the secret number!')
+
+    let triesWord = tries > 1 ? 'tries' : 'try'
+    let successMessage = `You guessed the secret number with ${tries} ${triesWord}!`
+    showTextOnScreen('p', successMessage)
   }
 
   // case guess is not correct, show hints to user
@@ -31,6 +35,7 @@ function checkGuess() {
     else {
       showTextOnScreen('p', 'The secret number is greater than your guess.')
     }
+    tries++
   }
 }
 
