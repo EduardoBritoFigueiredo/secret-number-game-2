@@ -8,8 +8,12 @@ function showTextOnScreen(tag, text) {
   field.innerHTML = text
 }
 
-showTextOnScreen('h1', 'SECRET NUMBER GAME')
-showTextOnScreen('p', 'Pick a number between 1 and 10')
+function showInitialTexts() {
+  showTextOnScreen('h1', 'SECRET NUMBER GAME')
+  showTextOnScreen('p', 'Pick a number between 1 and 10')
+}
+
+showInitialTexts()
 
 // function to check if guess is correct and show response
 function checkGuess() {
@@ -22,6 +26,8 @@ function checkGuess() {
     let triesWord = tries > 1 ? 'tries' : 'try'
     let successMessage = `You guessed the secret number with ${tries} ${triesWord}!`
     showTextOnScreen('p', successMessage)
+
+    document.getElementById('reiniciar').removeAttribute('disabled')
   }
 
   // case guess is not correct, show hints to user
@@ -47,4 +53,12 @@ function generateRandomNumber() {
 function clearInputText() {
   guessInput = document.querySelector('input')
   guessInput.value = ''
+}
+
+function resetGame() {
+  secretNumber = generateRandomNumber()
+  clearInputText()
+  tries = 1
+  showInitialTexts()
+  document.getElementById('reiniciar').setAttribute('disabled', true)
 }
