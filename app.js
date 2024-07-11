@@ -8,6 +8,7 @@ let tries = 1
 function showTextOnScreen(tag, text) {
   let field = document.querySelector(tag)
   field.innerHTML = text
+  responsiveVoice.speak(text, 'UK English Female', {rate:1.0});
 }
 
 function showInitialTexts() {
