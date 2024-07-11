@@ -8,6 +8,16 @@ Practical challenge during Alura training on basic programming with Javascript, 
 
 ![snapshot of the game](/img/printscreen%20secret-number-game-2.png)
 
+## GAME RULES
+
+* The game uses a responsive voice script to read the screen text with instructions during the game
+* The game defines a random number as a secret number between 1 and 10
+* The default maximum number for the secret number is 10 but it can be changed on the game code
+* The user must insert his guess number on the input and press the **GUESS** button
+* If the guess number is the secret number, the game will the user how many tries he guessed the secret number
+* If the guess number is not the secret number, the game will give the user a hint if the guess number is less or greater than the secret number
+* For a new game, the user must press the **NEW GAME** button
+
 ## TECHNOLOGIES
 
 - ![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
