@@ -1,3 +1,5 @@
+let secretNumberList = []
+let maxSecretNumber = 10
 let secretNumber = generateRandomNumber()
 console.log(`Secret number: ${secretNumber}`)
 let tries = 1
@@ -47,7 +49,18 @@ function checkGuess() {
 }
 
 function generateRandomNumber() {
-  return parseInt(Math.random() * 10 + 1)
+  let pickedNumber = parseInt(Math.random() * maxSecretNumber + 1)
+  let secretNumberListSize = secretNumberList.length
+
+  if(secretNumberListSize == maxSecretNumber) {
+    secretNumberList = []
+  }
+  if(secretNumberList.includes(pickedNumber)) {
+    return generateRandomNumber()
+  } else {
+    secretNumberList.push(pickedNumber)
+    return pickedNumber
+  }
 }
 
 function clearInputText() {
