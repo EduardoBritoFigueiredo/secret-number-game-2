@@ -8,6 +8,8 @@ Practical challenge during Alura training on basic programming with Javascript, 
 
 ![snapshot of the game](/img/printscreen%20secret-number-game-2.png)
 
+Click [here](https://eduardobritofigueiredo.github.io/secret-number-game-2) to see a demo of the game working.
+
 ## GAME RULES
 
 * The game uses a responsive voice script to read the screen text with instructions during the game
